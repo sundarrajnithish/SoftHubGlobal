@@ -1,5 +1,5 @@
 const express = require('express');
-const stripe = require('stripe')('sk_test_51QK8A7IKDma6OOXzuPSKVIu8gKwaUY1Wps3ARjTVDafSuU8MrALjVRLUiYePEhNDcFJcvBCY2EsQT4rNrO9VutEt00W4ndCCtg'); // Replace with your actual Stripe secret key
+const stripe = require('stripe')('YOUR_SECRET_KEY'); // Replace with your actual Stripe secret key
 const bodyParser = require('body-parser');
 
 const app = express();
