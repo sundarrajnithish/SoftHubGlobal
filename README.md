@@ -1,6 +1,4 @@
-# COEN6313
-
-# Software Vendor Web Application
+# SoftHub Web Application
 
 <a href="https://main.duvnntlhsen54.amplifyapp.com/">Link to Deployed Service</a>
 <p></p>
