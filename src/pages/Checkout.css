@@ -1,0 +1,175 @@
+
+  
+  /* Checkout container styling */
+  .checkout-container {
+    max-width: 600px;
+    margin: 180px auto;
+    padding: 0px 30px;
+    background-color: #ffffff; /* White background for the checkout container */
+    border-radius: 16px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12), 0 4px 12px rgba(0, 0, 0, 0.08); /* Subtle shadow for depth */
+    overflow: hidden;
+    text-align: center;
+  }
+  
+  .checkout-container h1 {
+    font-size: 32px;
+    font-weight: 700;
+    color: #ff9500;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+  }
+  
+  .checkout-container p {
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 25px;
+    line-height: 1.4;
+  }
+  
+  .checkout-container img {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 25px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .checkout-container img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+  }
+  
+  /* Payment section styling */
+  .payment-section {
+    margin-top: 40px;
+  }
+  
+  .payment-section button {
+    background-color: #ff9500; /* Stripe-like orange */
+    color: white;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  }
+  
+  .payment-section button:disabled {
+    background-color: #ddd;
+    cursor: not-allowed;
+  }
+  
+  .payment-section button:hover:not(:disabled) {
+    background-color: #e68300; /* Slightly darker shade */
+    transform: translateY(-2px); /* Button lift effect */
+  }
+  
+  /* Payment result section */
+  .payment-result {
+    text-align: center;
+    margin-top: 30px;
+  }
+  
+  .payment-result pre {
+    font-size: 16px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 15px;
+    border-radius: 8px;
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .payment-result pre.success {
+    background-color: #e3f9e5;
+    color: #3c763d;
+  }
+  
+  .payment-result pre.error {
+    background-color: #f2dede;
+    color: #a94442;
+  }
+  
+  /* General responsive design */
+  @media (max-width: 768px) {
+    .checkout-container {
+      padding: 35px 25px;
+    }
+  
+    .checkout-container h1 {
+      font-size: 28px;
+    }
+  
+    .checkout-container p {
+      font-size: 16px;
+    }
+  
+    .payment-section button {
+      font-size: 16px;
+      padding: 14px 28px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .checkout-container {
+      padding: 20px 15px;
+    }
+  
+    .checkout-container h1 {
+      font-size: 24px;
+    }
+  
+    .checkout-container p {
+      font-size: 14px;
+    }
+  
+    .payment-section button {
+      font-size: 15px;
+      padding: 12px 24px;
+    }
+  }
+  
+  /* Add success animation */
+.payment-section button.success {
+    background-color: #28a745; /* Green for success */
+    animation: success-animation 0.8s ease forwards;
+  }
+  
+  .payment-section button.failed {
+    background-color: #dc3545; /* Red for failure */
+    animation: failed-animation 0.8s ease forwards;
+  }
+  
+  @keyframes success-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  @keyframes failed-animation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(0.9);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }

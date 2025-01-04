@@ -1,0 +1,91 @@
+/* Container for the form (specific to the product form page) */
+.product-form-page {
+  margin-top: 100px; /* Adds spacing so form isn't hidden under the navbar */
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  width: 100%;
+  max-width: 600px;
+  margin: 145px auto;
+  box-sizing: border-box;
+}
+
+/* Form Header */
+.product-form-page h1 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 24px;
+}
+
+/* Form Fields */
+.product-form-page form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.product-form-page label {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: black;
+}
+
+.product-form-page input,
+.product-form-page select,
+.product-form-page textarea {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.product-form-page textarea {
+  resize: vertical;
+}
+
+.product-form-page button {
+  padding: 12px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product-form-page button:hover {
+  background-color: #0056b3;
+}
+
+/* Image Upload Preview */
+.image-preview {
+  margin-top: 10px;
+}
+
+.image-preview img {
+  max-width: 100px;
+  max-height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+  .product-form-page {
+    padding: 20px;
+  }
+}
+
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 5px;
+}
+
+.selected-features {
+  color: #000;
+}

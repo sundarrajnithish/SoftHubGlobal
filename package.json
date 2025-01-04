@@ -1,0 +1,61 @@
+{
+  "name": "coen6313",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@aws-amplify/ui-react": "^6.3.1",
+    "@emotion/react": "^11.13.5",
+    "@emotion/styled": "^11.13.5",
+    "@mui/material": "^6.1.8",
+    "@stripe/react-stripe-js": "^2.9.0",
+    "@stripe/stripe-js": "^4.10.0",
+    "@testing-library/jest-dom": "^5.17.0",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^13.5.0",
+    "amazon-cognito-identity-js": "^6.3.12",
+    "aws-amplify": "^6.6.0",
+    "aws-sdk": "^2.1691.0",
+    "axios": "^1.7.7",
+    "body-parser": "^1.20.3",
+    "chart.js": "^4.4.6",
+    "dayjs": "^1.11.13",
+    "express": "^4.21.1",
+    "react": "^18.3.1",
+    "react-bootstrap": "^2.10.6",
+    "react-chartjs-2": "^5.2.0",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.26.1",
+    "react-scripts": "^5.0.1",
+    "react-slick": "^0.30.2",
+    "react-syntax-highlighter": "^15.6.1",
+    "recharts": "^2.12.7",
+    "slick-carousel": "^1.8.1",
+    "stripe": "^17.3.1",
+    "web-vitals": "^2.1.4",
+    "webpack": "^5.96.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

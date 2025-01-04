@@ -1,0 +1,39 @@
+.api-doc-container {
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  max-width: 800px;
+  margin: 350px auto;
+}
+
+.api-doc-header {
+  text-align: center;
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+.api-doc-description {
+  text-align: center;
+  font-size: 1.1em;
+  padding-bottom: 20px;
+}
+
+.swagger-link-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.swagger-link {
+  color: #ff9500;
+  text-decoration: none;
+  font-size: 1.2em;
+  padding: 10px 20px;
+  border: 2px solid #ff9500;
+  border-radius: 5px;
+  background-color: #f1f1f1;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.swagger-link:hover {
+  background-color: #ce7800;
+  color: white;
+}
