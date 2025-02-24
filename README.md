@@ -1,117 +1,78 @@
-# SoftHub Web Application
+# SoftHub
 
-<a href="https://main.duvnntlhsen54.amplifyapp.com/">Link to Deployed Service</a>
-<p></p>
-<a href="https://balajiravindaran.atlassian.net/jira/software/projects/CSD/boards/9">Link to Jira Project</a>
-
-## Project Overview
-
-This is a **software-buying web application** built with React, hosted on AWS. The app allows consumers to browse, purchase, and download software. Providers can manage software listings, and admins can monitor website performance and analytics. The platform includes AI-powered product recommendations and sentiment analysis of reviews to enhance user experience.
+## Overview
+SoftHub is a cloud-hosted marketplace for software and subscription services, designed to connect providers and consumers through a secure and AI-enhanced platform. The marketplace enables software providers to list their products, analyze performance metrics, and gain customer insights. Consumers benefit from AI-powered review summaries, sentiment analysis, personalized recommendations, and secure transactions.
 
 ## Features
+- **Product Listings:** Software providers can list their products with descriptions, prices, and relevant details.
+- **AI-Powered Review Summaries:** Consumers can access summarized user reviews and sentiment analysis for informed purchasing decisions.
+- **Personalized Recommendations:** The platform dynamically suggests relevant software based on user behavior.
+- **Secure Payments:** Payments are processed securely through Stripe, with activation codes and installer files automatically delivered via email.
+- **User Authentication:** AWS Cognito ensures secure access control for both providers and consumers.
+- **Performance Analytics:** Providers gain insights into customer sentiment, sales trends, and software performance.
+- **Admin Monitoring:** Platform activity can be monitored to ensure smooth operations.
 
-### User Roles:
-- **Consumer**: Can browse and purchase software, receiving product download links and license keys via email after purchase.
-- **Provider**: Can manage product listings (add, update, suspend) and track software performance.
-- **Admin**: Can view website analytics, user activity, and monitor overall performance.
+![HomePage](images/HomePage.png)  
 
-### AI Models:
-- **Product Recommendation**: Provides personalized software suggestions based on consumer activity.
-- **Review Sentiment Analysis**: Analyzes customer reviews and assigns sentiment scores.
+## Architecture
+SoftHub follows a microservices-based, cloud-native architecture using AWS services for scalability, security, and high availability.
 
-### Key Functionalities:
-- Secure online payments for purchasing software.
-- Automatic email delivery of download links and license keys.
-- AI-driven product recommendations and review sentiment insights.
-- Real-time product management for providers.
-- Comprehensive analytics for admins.
+- **Frontend:** React-based UI for seamless browsing and transactions.
+- **Backend:** AWS Lambda functions managing authentication, transactions, and product listings.
+- **Database:** Amazon DynamoDB for storing product details, user data, and reviews.
+- **AI Integration:** Llama 8B for sentiment analysis and review summarization, hosted on AWS SageMaker.
+- **Payment System:** Secure payment processing via Stripe, integrated with AWS SES for email confirmations.
+- **Security:** AWS Cognito for authentication, SSL/TLS for encrypted data transmission.
+- **Monitoring & Analytics:** AWS CloudWatch for tracking performance and QuickSight for analytics.
 
-## Tech Stack
+![Architecture](images/TechStack.png) 
 
-### Frontend
-- **React**: The web app frontend.
-- **AWS Amplify**: Used for hosting the frontend and backend integration.
+## Technical Implementation
+### Frontend (React)
+- Component-based architecture for a modular and scalable UI.
+- React Router for seamless navigation.
+- Axios for handling API requests.
 
-### Backend
-- **AWS Lambda**: Handles serverless backend functions for core business logic.
-- **Amazon API Gateway**: Exposes API endpoints for the frontend.
-- **Amazon Cognito**: Provides authentication and authorization for Consumers, Providers, and Admins.
-- **Amazon DynamoDB**: A NoSQL database for storing product information, user data, and purchase history.
+![Listings](images/Listings.png) 
+![ProductPage](images/ProductPage.png) 
 
-### AI Models
-- **Amazon SageMaker**: Hosts and serves machine learning models for product recommendations and sentiment analysis.
 
-### Payment
-- **Amazon Pay** or **Stripe**: Manages secure online payments.
+### Backend (AWS Lambda & API Gateway)
+- Serverless backend using AWS Lambda.
+- API Gateway exposing RESTful APIs for frontend communication.
+- Cognito for user authentication.
 
-### Storage & Download
-- **Amazon S3**: Stores downloadable software and delivers download links.
+![Sequence](images/Sequence Diagram.png) 
 
-### Notifications
-- **Amazon SES**: Sends automated emails with software download links and license keys to consumers post-purchase.
+### Database (Amazon DynamoDB)
+- High-availability NoSQL database for quick data access.
+- Optimized schema design for fast querying.
 
-### Monitoring & Analytics
-- **Amazon CloudWatch**: Monitors application health and logs errors.
-- **Amazon QuickSight**: Provides the Admin with dashboards and analytics on sales and website performance.
+![Database](images/DB RESTAPI.png) 
 
-### Security
-- **AWS WAF**: Protects the application from common web threats.
-- **AWS Shield**: Provides DDoS protection.
+### AI Integration (Llama 8B & SageMaker)
+- AI models for sentiment analysis and review summarization.
+- Real-time review insights for consumers.
 
-## AWS Services Breakdown
+![Provider Recommendations](images/ProviderRecommendations.png) 
 
-- **Frontend Hosting**: AWS Amplify
-- **Authentication & Authorization**: Amazon Cognito
-- **Backend Logic**: AWS Lambda
-- **API Management**: Amazon API Gateway
-- **Database**: Amazon DynamoDB
-- **AI Model Hosting**: Amazon SageMaker
-- **Email Notifications**: Amazon SES
-- **Payment Integration**: Amazon Pay or Stripe
-- **File Storage**: Amazon S3
-- **Monitoring**: Amazon CloudWatch
-- **Analytics**: Amazon QuickSight
-- **Web Security**: AWS WAF, AWS Shield
+### Payment Integration (Stripe & AWS SES)
+- Secure transactions using Stripe API.
+- Automated email delivery of activation codes via AWS SES.
 
-## Setup & Deployment
+![Stripe](images/stripe-payment.png) 
 
-### Prerequisites
-- AWS account.
-- Node.js and npm installed locally.
-- React environment set up.
 
-### Steps
-1. **Clone the repository**:
-   ```bash
-   git clone <repository-url>
-   cd <repository-name>
+## Lessons Learned
+- **Efficient Cloud Resource Management:** Optimizing AWS services reduced costs and improved performance.
+- **Standardized Naming Conventions:** A unified approach to naming database keys and APIs improved maintainability.
+- **CI/CD Integration:** Automating deployments streamlined the development process.
 
-2. **Install dependencies:**:
-   ```bash
-   npm install
+## Future Enhancements
+- **Docker Implementation:** Improve CI/CD workflows for better deployment automation.
+- **Mobile App Development:** Extend SoftHub's features to mobile platforms.
+- **Advanced Analytics:** Enhance provider dashboards with real-time sales trends and customer behavior analysis.
 
-3. **Set up AWS Amplify**:
-   **Install AWS Amplify CLI**:
-   ```bash
-   npm install -g @aws-amplify/cli
-   amplify configure
-  
- 4. **Initialize the project**:
-    ```bash
-    amplify init
-    amplify add auth
-    amplify push
-
- 5. **Deploy the Frontend**:
-    ```bash
-    amplify add hosting
-    amplify publish
-    
- 6. **Configure API Gateway and Lambda**:
-    ```bash
-    - Use AWS Lambda and API Gateway to deploy backend logic.
-    - Set up DynamoDB, SES, SageMaker models, and other AWS services via AWS Console.
-
- 7. **Add Payment Integration**:
-    ```bash
-    - Integrate Amazon Pay or Stripe into the backend for processing payments.
+## Links
+- **Live Marketplace:** [SoftHub Marketplace](https://main.duvnntlhsen54.amplifyapp.com/)
+- **GitHub Repository:** [SoftHub on GitHub](https://github.com/BalajiRavindaran/COEN6313)
